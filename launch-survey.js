@@ -10,9 +10,31 @@
  const configured=/^https:\/\/formsubmit\.co\/[a-zA-Z0-9@._+-]+$/.test(endpoint);
  const availability=document.querySelector('#survey-availability');
  availability.hidden=false;
+ availability.textContent='Your feedback is sent securely through FormSubmit. If it cannot connect, your answers will stay here.';
  if(configured) form.action=endpoint;
  button.disabled=false;
  let inFlight=false,completed=false;
+ const backup=document.createElement('div');backup.className='feedback-backup';
+ backup.innerHTML='<p>Having trouble submitting?</p><button type="button" class="feedback-copy">Copy my answers</button> <a class="feedback-email-link" href="mailto:19707088279jia@gmail.com">Email my answers</a><p class="backup-help">Opens your email app. Review and send the message yourself; your email address will be visible to us. This does not subscribe you to updates.</p>';
+ form.append(backup);
+ const answerText=()=>{
+  const lines=['Eastern Bowl — Market Research Feedback'];
+  form.querySelectorAll('input[type=radio]:checked').forEach(input=>lines.push(input.name+': '+input.closest('label').innerText.trim()));
+  lines.push('Suggestions: '+(form.elements.suggestions?.value || ''),'Launch updates consent: '+consent.checked);
+  if(consent.checked)lines.push('Email: '+email.value);
+  lines.push('Submission ID: '+submissionId,'Client time: '+new Date().toISOString(),'Source parameters: '+JSON.stringify(sources));
+  return lines.join('\n');
+ };
+ backup.querySelector('a').addEventListener('click',event=>{event.currentTarget.href='mailto:19707088279jia@gmail.com?subject='+encodeURIComponent('Eastern Bowl — Market Research Feedback')+'&body='+encodeURIComponent(answerText());});
+ backup.querySelector('button').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(answerText());notify('Answers copied. Paste them into an email to 19707088279jia@gmail.com. Nothing has been sent automatically.','info');}
+  catch{
+   let text=backup.querySelector('textarea');
+   if(!text){text=document.createElement('textarea');text.readOnly=true;text.setAttribute('aria-label','Answers to copy');backup.append(text);}
+   text.value=answerText();text.focus();text.select();
+   notify('Select and copy the answers below, then email them to 19707088279jia@gmail.com. Nothing has been sent automatically.','info');
+  }
+ });
  const submissionId=globalThis.crypto?.randomUUID?.() || `eb-${Date.now()}-${Math.random().toString(36).slice(2)}`;
  const permitted={order_days:['1-2','3-4','5-plus','unsure'],delivery_schedule:['daily','twice-weekly','either'],meal_plan:['standard','personalized','either','too-expensive','neither']};
  const sourceKeys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','utm_id','gclid','gbraid','wbraid','fbclid','msclkid','ttclid'];
@@ -27,7 +49,7 @@
   if(inFlight || completed) return;
   if(!configured){notify('Feedback submissions are not open yet. Nothing has been sent or saved. Please check back soon.','error');return;}
   if(!form.reportValidity())return;
-  if(location.protocol==='file:'){notify('To submit, open this page through a web server rather than a local file. You can also email your feedback to 19708088279jia@gmail.com. Nothing has been sent.','error');return;}
+  if(location.protocol==='file:'){notify('To submit, open this page through a web server rather than a local file. You can also email your feedback to 19707088279jia@gmail.com. Nothing has been sent.','error');return;}
   if(form.elements._gotcha.value){notify('We could not accept this submission. Please refresh and try again.','error');return;}
   const values=new FormData(form),payload={};
   for(const [key,options] of Object.entries(permitted)){
@@ -43,16 +65,28 @@
   payload._template='table';
   payload._honey='';
   if(consent.checked){payload.email=email.value.trim();payload.consent_recorded_at=new Date().toISOString();}
-  // Native POST keeps service CAPTCHA and activation/confirmation screens intact.
-  // We never claim email delivery or database storage from a local click.
-  const outgoing=document.createElement('form');
-  outgoing.method='POST';outgoing.action=endpoint;outgoing.hidden=true;
-  for(const [name,value] of Object.entries(payload)){
-   const input=document.createElement('input');input.type='hidden';input.name=name;input.value=String(value);outgoing.append(input);
+  inFlight=true;button.disabled=true;button.textContent='Sending…';
+  notify('Sending your feedback. This may take up to 15 seconds…','pending');
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),15000);
+  try {
+   const response=await fetch(endpoint.replace('https://formsubmit.co/','https://formsubmit.co/ajax/'),{
+    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(payload),signal:controller.signal
+   });
+   const result=await response.json();
+   if(!response.ok || ![true,'true'].includes(result?.success))throw new Error('unconfirmed');
+   if(/activat|confirm.{0,25}email|check.{0,25}inbox/i.test(String(result.message || ''))){
+    notify('The form service requires the website owner to activate the receiving email. Delivery is not confirmed. Your answers are still here; please use the email option below.','error');
+   }else{
+    completed=true;
+    notify('The form service accepted your feedback. Thank you! This confirms service acceptance, not delivery to an inbox.','success');
+   }
+  } catch(error) {
+   notify('We could not confirm receipt'+(error.name==='AbortError'?' within 15 seconds':'')+'. Your answers are still here. You can copy them or email them below. Retrying may send a duplicate if the first request was received.','error');
+  } finally {
+   clearTimeout(timeout);inFlight=false;button.disabled=completed;
+   button.textContent=completed?'Feedback Sent':'Submit Feedback';
   }
-  document.body.append(outgoing);
-  notify('Opening the form service. Complete its verification to send your feedback.','pending');
-  outgoing.submit();
-  outgoing.remove();
  });
 })();
