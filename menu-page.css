@@ -1,0 +1,39 @@
+/* Menu-only styling, isolated so the existing Chinese page is unaffected. */
+:root{color-scheme:light;--paper:#faf7f2;--card:#fcf9f5;--ink:#161513;--border:#e9e4dc}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:Georgia,'Times New Roman','Songti SC',SimSun,serif}
+.menu-page{width:min(1440px,calc(100% - 80px));margin:0 auto;padding:10px 0 26px}
+.menu-heading{text-align:center;margin:0 0 25px}
+.menu-heading h1{font-size:58px;line-height:1.1;letter-spacing:-1.8px;margin:0 0 4px;font-weight:700}
+.menu-heading p{display:flex;align-items:center;justify-content:center;gap:30px;margin:0;font-size:21px;line-height:1.4;font-style:italic}
+.menu-heading p::before,.menu-heading p::after{content:'';height:1px;background:#a6a099;flex:0 1 100px}
+.dish-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:1fr;gap:12px;align-items:stretch}
+.dish-card{min-width:0;display:grid;grid-template-rows:145px 66px 210px;gap:0;padding:9px 10px 12px;background:var(--card);border:1px solid var(--border);border-radius:21px;box-shadow:0 2px 3px #302b2010}
+.food-frame{display:flex;align-items:center;justify-content:center;min-width:0;min-height:0}
+.food-image{display:block;width:100%;height:100%;object-fit:contain;border-radius:12px}
+.dish-title{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5px 0;min-width:0}
+.dish-title h2{font-size:18px;line-height:1.12;letter-spacing:-.45px;margin:0;font-weight:700;overflow-wrap:break-word}
+.dish-title p{font-size:17px;line-height:1.3;margin:4px 0 0}
+.radar-frame{display:flex;align-items:center;justify-content:center;min-height:0;min-width:0;width:100%;height:100%;border-radius:5px;color:inherit;cursor:zoom-in}
+.radar-image{display:block;width:100%;height:100%;object-fit:contain;transform-origin:center;opacity:1;transform:scale(1)}
+.radar-frame:focus-visible{outline:2px solid #555;outline-offset:3px}
+.radar-image.radar-reveal{animation:radar-grow .5s ease-out both}
+@keyframes radar-grow{from{opacity:.35;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.coming-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px 12px}
+.bowl-icon{width:70px;height:66px;flex-shrink:0;margin-bottom:14px}
+.coming-soon h2{font-size:25px;line-height:1.14;letter-spacing:-.7px;margin:0 0 18px}
+.coming-soon p{font-size:17px;line-height:1.4;font-style:italic;margin:0}
+.coming-soon strong{font-size:24px;font-style:normal;line-height:1.35}
+.menu-disclaimer{text-align:center;color:#69655f;font:12px/1.6 Arial,'Microsoft YaHei',sans-serif;margin:22px auto 0;max-width:850px}
+@media(min-width:1700px){.menu-page{width:min(1600px,calc(100% - 120px))}.dish-card{grid-template-rows:160px 66px 230px}.dish-title h2{font-size:20px}.dish-title p{font-size:18px}}
+@media(max-width:1199px){.menu-page{width:calc(100% - 52px);padding-top:20px}.dish-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.dish-card{grid-template-rows:165px 65px 240px}.menu-heading h1{font-size:52px}.menu-heading p{font-size:19px;gap:20px}.coming-soon h2{font-size:27px}}
+@media(max-width:899px){.menu-page{width:calc(100% - 40px)}.dish-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dish-card{grid-template-rows:180px 65px 260px}.menu-heading h1{font-size:48px}.menu-heading p{font-size:18px;gap:15px}.menu-heading p::before,.menu-heading p::after{flex-basis:45px}.dish-title h2{font-size:20px}.dish-title p{font-size:18px}}
+@media(max-width:599px){.menu-page{width:calc(100% - 32px);max-width:430px;padding-top:20px}.menu-heading{margin-bottom:22px}.menu-heading h1{font-size:46px}.menu-heading p{font-size:17px;line-height:1.5;display:block;padding:0 5px}.menu-heading p::before,.menu-heading p::after{display:none}.dish-grid{grid-template-columns:minmax(0,1fr);gap:17px}.dish-card{grid-template-rows:190px 67px 280px;padding:12px;border-radius:20px}.dish-title h2{font-size:22px;letter-spacing:-.5px}.dish-title p{font-size:19px}.coming-soon{min-height:563px}.coming-soon h2{font-size:30px}.coming-soon p{font-size:20px}.coming-soon strong{font-size:28px}.bowl-icon{width:86px;height:80px}.menu-disclaimer{font-size:11px;margin-top:23px}}
+@media(prefers-reduced-motion:reduce){.radar-image.radar-reveal{animation:none;opacity:1;transform:none}}
+/* Grid, baseline and labels stay stationary. Only the six data vertices grow. */
+.nutrition-radar{display:block;width:100%;height:100%;overflow:visible}
+.radar-data{transform-box:view-box;transform-origin:200px 165px}
+.radar-data.radar-growing{animation:radar-polygon-grow .5s ease-out both}
+@keyframes radar-polygon-grow{from{transform:scale(0);opacity:.25}to{transform:scale(1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.radar-data.radar-growing{animation:none;transform:none;opacity:1}}

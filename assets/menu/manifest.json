@@ -1,0 +1,268 @@
+[
+  {
+    "id": "01",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/01_左宗棠鸡饭",
+    "zh": "左宗棠鸡饭",
+    "sourceEnglish": "General Tso Chicken Rice",
+    "food": {
+      "path": "assets/menu/01/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "03665ee97a666a1da61b68077b11fddbeb379db49215c4d65a3c3188a2edbb75"
+    },
+    "radar": {
+      "path": "assets/menu/01/radar.png",
+      "width": 1256,
+      "height": 1326,
+      "sha256": "277fe6ba52123798a2c9d81ea80e9588ebe3da50f05d48ccd61a79fddb483293"
+    },
+    "en": "General Tso’s Chicken Rice"
+  },
+  {
+    "id": "02",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/02_宫保鸡丁饭",
+    "zh": "宫保鸡丁饭",
+    "sourceEnglish": "Kung Pao Chicken Rice",
+    "food": {
+      "path": "assets/menu/02/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "2daf57b19b0b3f4f6f1f7b98e014829beaa7a5862a23165cec3aec714a6e665f"
+    },
+    "radar": {
+      "path": "assets/menu/02/radar.png",
+      "width": 1256,
+      "height": 1326,
+      "sha256": "d56a8176fb54d3e6afe06420a90556a969ecbd7849bb24ce06eaae909e6e5e81"
+    },
+    "en": "Kung Pao Chicken Rice"
+  },
+  {
+    "id": "03",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/03_鸡肉炒饭",
+    "zh": "鸡肉炒饭",
+    "sourceEnglish": "Chicken Fried Rice",
+    "food": {
+      "path": "assets/menu/03/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f402e5533921195e4ff83e3c7993259a09d447fd55f56cac66d762dc8bfe3fe2"
+    },
+    "radar": {
+      "path": "assets/menu/03/radar.png",
+      "width": 1256,
+      "height": 1326,
+      "sha256": "b439fb9dfb29f1610ed8b6d1e6dee266dbbf2b53dc91ef9db9065e64c8756716"
+    },
+    "en": "Chicken Fried Rice"
+  },
+  {
+    "id": "04",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/04_黄焖鸡米饭",
+    "zh": "黄焖鸡米饭",
+    "sourceEnglish": "Braised Chicken Rice",
+    "food": {
+      "path": "assets/menu/04/food.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "ee155356738f61fe8116fe0155db2d190580b13d7f90ebd5b9a37e34446f59de"
+    },
+    "radar": {
+      "path": "assets/menu/04/radar.png",
+      "width": 1256,
+      "height": 1326,
+      "sha256": "1e7206d793e47b4a826681c3687f37fdc89d8c5f44e5d96865a3603ad5bd16d6"
+    },
+    "en": "Braised Chicken with Potatoes Rice"
+  },
+  {
+    "id": "05",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/05_卤肉饭",
+    "zh": "卤肉饭",
+    "sourceEnglish": "Lu Rou Fan",
+    "food": {
+      "path": "assets/menu/05/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "14ac8fe98e3d88989311942d10b44b7c213dd2841658a8351585415aca337503"
+    },
+    "radar": {
+      "path": "assets/menu/05/radar.png",
+      "width": 1256,
+      "height": 1326,
+      "sha256": "46bbc3ff732bd876f131034283ec6cf20140c4ee237ecb5203b54b8796fa6c2f"
+    },
+    "en": "Braised Pork Rice"
+  },
+  {
+    "id": "06",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/06_麻婆豆腐饭",
+    "zh": "麻婆豆腐饭",
+    "sourceEnglish": "Mapo Tofu Rice",
+    "food": {
+      "path": "assets/menu/06/food.png",
+      "width": 1535,
+      "height": 1024,
+      "sha256": "0f87f60eb1505283c9f70b0604a275b340e84f63d48d25f61d4176f26fdbfba4"
+    },
+    "radar": {
+      "path": "assets/menu/06/radar.png",
+      "width": 1440,
+      "height": 1602,
+      "sha256": "29d55b06ba614260b4006b810cf5552c6504c11d32f0afcc71ab285f99c3aa1b"
+    },
+    "en": "Mapo Tofu Rice"
+  },
+  {
+    "id": "07",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/07_番茄炒蛋饭",
+    "zh": "番茄炒蛋饭",
+    "sourceEnglish": "Tomato Egg Rice",
+    "food": {
+      "path": "assets/menu/07/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "29f61f8dff264d7b1c01dab1c9ccc586d02fc822d8f765f04822e457fe9e8680"
+    },
+    "radar": {
+      "path": "assets/menu/07/radar.png",
+      "width": 1680,
+      "height": 1760,
+      "sha256": "64513858d97f86c03d4fce15d34a47acc85e0a608713aadca1dd03495265ecb3"
+    },
+    "en": "Tomato & Egg Rice"
+  },
+  {
+    "id": "08",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/08_土豆排骨饭",
+    "zh": "土豆排骨饭",
+    "sourceEnglish": "Pork Ribs Potato Rice",
+    "food": {
+      "path": "assets/menu/08/food.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "c91068b24ae6ca59a17fc3a8bca4558b7a141642f7b19fa0244fa72c26b59f81"
+    },
+    "radar": {
+      "path": "assets/menu/08/radar.png",
+      "width": 1745,
+      "height": 1728,
+      "sha256": "d004448f87049a40262bade9c2758fa566e023fa8bb2253dda19a089351085e8"
+    },
+    "en": "Pork Ribs with Potatoes Rice"
+  },
+  {
+    "id": "09",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/09_猪肉白菜炖粉条",
+    "zh": "猪肉白菜炖粉条",
+    "sourceEnglish": "Pork Cabbage Glass Noodles",
+    "food": {
+      "path": "assets/menu/09/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "53e998be5bc3059bd0ff65af8a2937b9782b631710e1416ffcd00e1004e0638b"
+    },
+    "radar": {
+      "path": "assets/menu/09/radar.png",
+      "width": 1803,
+      "height": 1803,
+      "sha256": "3db30c06a6e35884759d15e79f2dfe40a8b2c80c67261479968bc4ec31ef59a8"
+    },
+    "en": "Pork & Cabbage Glass Noodles"
+  },
+  {
+    "id": "10",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/10_白菜炖肉丸饭",
+    "zh": "白菜炖肉丸饭",
+    "sourceEnglish": "Cabbage Pork Meatballs Rice",
+    "food": {
+      "path": "assets/menu/10/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "55c133d424820dd59a95c135c31f24eb8ad497ae0302b9942ed656df19a4a86d"
+    },
+    "radar": {
+      "path": "assets/menu/10/radar.png",
+      "width": 1725,
+      "height": 1819,
+      "sha256": "5cab2605088d297196c0b89a736ba965b3235454245f9dbf63a219b40d7f14f1"
+    },
+    "en": "Braised Meatballs with Cabbage Rice"
+  },
+  {
+    "id": "11",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/11_手撕包菜饭",
+    "zh": "手撕包菜饭",
+    "sourceEnglish": "Stir Fried Cabbage Rice",
+    "food": {
+      "path": "assets/menu/11/food.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "a89a369177c2a28cb2713f52ea1abab6c112c4788a7cefbdf275c5f072447934"
+    },
+    "radar": {
+      "path": "assets/menu/11/radar.png",
+      "width": 1216,
+      "height": 1274,
+      "sha256": "076ff04f6fdb7e1339f053d0d7cf65c5e6fbb648942896ecb331e392eec1f6c7"
+    },
+    "en": "Stir-Fried Cabbage Rice"
+  },
+  {
+    "id": "12",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/12_青椒炒蛋饭",
+    "zh": "青椒炒蛋饭",
+    "sourceEnglish": "Green Pepper Egg Rice",
+    "food": {
+      "path": "assets/menu/12/food.png",
+      "width": 1589,
+      "height": 990,
+      "sha256": "1a05a3e054b224307bacc3ee489058d2339491d5504d2a91e48f6a3d9ced3bf6"
+    },
+    "radar": {
+      "path": "assets/menu/12/radar.png",
+      "width": 1269,
+      "height": 1326,
+      "sha256": "41ebbdcbf0ec497d26ccb9b5957ba6372785e40d940c5dc769e827c09c873412"
+    },
+    "en": "Green Pepper & Egg Rice"
+  },
+  {
+    "id": "13",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/13_肉末炸酱面",
+    "zh": "肉末炸酱面",
+    "sourceEnglish": "Zhajiangmian",
+    "food": {
+      "path": "assets/menu/13/food.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "5300fb232e4517746acf3db663eff4a3e3a772570a1a7ee905f46829c1c4fbd2"
+    },
+    "radar": {
+      "path": "assets/menu/13/radar.png",
+      "width": 1472,
+      "height": 1597,
+      "sha256": "adc0b391125947debdaa68a2e9c122f4dd3ea7699d46e7e093ca193fc9d8a0a7"
+    },
+    "en": "Zhajiangmian"
+  },
+  {
+    "id": "14",
+    "folder": "Eastern_Bowl_菜品与营养图_14道/14_麻酱鸡丝拌面",
+    "zh": "麻酱鸡丝拌面",
+    "sourceEnglish": "Sesame Chicken Noodles",
+    "food": {
+      "path": "assets/menu/14/food.png",
+      "width": 1448,
+      "height": 1086,
+      "sha256": "9e81fe368b6177792951898d0b9735c0e9e5bef386e2e7568394427b7efd217c"
+    },
+    "radar": {
+      "path": "assets/menu/14/radar.png",
+      "width": 1234,
+      "height": 1300,
+      "sha256": "73962250b117749842dd91cff439509e06248319f032318e388fa10ee5c5c869"
+    },
+    "en": "Sesame Chicken Noodles"
+  }
+]

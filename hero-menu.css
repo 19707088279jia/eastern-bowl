@@ -1,0 +1,4 @@
+/* Restore the original hero without changing the new menu layout. */
+.hero, #waitlist-dialog{font-family:var(--font,Arial,sans-serif)}
+.menu-page{padding-top:36px}
+#waitlist-dialog{background:#fcfaf6}
