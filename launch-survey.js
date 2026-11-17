@@ -71,8 +71,8 @@
   const timeout=setTimeout(()=>controller.abort(),15000);
   try {
    const response=await fetch(endpoint.replace('https://formsubmit.co/','https://formsubmit.co/ajax/'),{
-    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body:JSON.stringify(payload),signal:controller.signal
+    method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8','Accept':'application/json'},
+    body:new URLSearchParams(Object.entries(payload).map(([key,value])=>[key,String(value)])),signal:controller.signal
    });
    const result=await response.json();
    if(!response.ok || ![true,'true'].includes(result?.success))throw new Error('unconfirmed');
