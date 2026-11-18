@@ -10,7 +10,7 @@ Main page: index.html (keep index-en.html and index-zh.html synchronized; all cu
 Hero copy: site-config.js. Menu layout: menu-page.css. Plans and survey: launch-survey.css and launch-survey.js.
 
 ## Feedback
-FormSubmit sends responses to the configured recipient. The owner must activate the recipient and verify delivery before collecting public feedback. See FORM-SETUP.md.
+The site links directly to the published Google Forms survey. View answers in the form owner’s Responses tab. Verify a TEST response before promotion. See FORM-SETUP.md.
 No survey responses are stored in this repository.
 
 ## Deployment
